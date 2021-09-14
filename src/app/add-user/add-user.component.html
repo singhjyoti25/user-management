@@ -1,0 +1,61 @@
+<app-header></app-header>
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Add User</mat-card-title>
+    </mat-card-header>
+
+    <form class="example-form" [formGroup]="signupForm" (ngSubmit)="signup()">
+      <mat-card-content>
+        <mat-form-field class="example-full-width" [floatLabel]="'always'">
+          <input matInput placeholder="Username" required formControlName="username" type="text">
+        </mat-form-field>
+        <div *ngIf="username.invalid && (username.dirty || username.touched)" class="error">
+          <p *ngIf="username.errors?.required">
+            Username is required.
+          </p>
+        </div>
+
+        <mat-form-field class="example-full-width" [floatLabel]="'always'">
+          <input matInput placeholder="Name" required formControlName="name" type="text">
+        </mat-form-field>
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error">
+          <p *ngIf="name.errors?.required">
+            Name is required.
+          </p>
+          <p *ngIf="name.errors?.pattern">
+              Name should be only contain alphabets
+          </p>
+        </div>
+
+        <mat-form-field class="example-full-width" [floatLabel]="'always'">
+          <input matInput placeholder="Password" required formControlName="password" type="password">
+        </mat-form-field>
+        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error">
+          <p *ngIf="password.errors?.required">
+            Password is required.
+          </p>
+          <p *ngIf="password.errors?.minlength">
+            Password should be minimum 6 characters long 
+          </p>
+          <p *ngIf="password.errors?.maxlength">
+              Password should be maximum 15 characters long 
+          </p>
+          <p *ngIf="password.errors?.pattern">
+              Password should be alphanumeric with one caps letter 
+          </p>
+        </div>
+          <mat-radio-group aria-label="Select an option" formControlName="role">
+              <mat-radio-button value="admin">Admin</mat-radio-button>
+              <mat-radio-button value="user">User</mat-radio-button>
+          </mat-radio-group>
+          <div *ngIf="role.invalid && (role.dirty || role.touched)" class="error">
+              <p *ngIf="role.errors?.required">
+                  Role is required
+              </p>
+          </div>
+      </mat-card-content>
+      <button mat-stroked-button color="accent" class="btn-block" type="submit">Add</button>
+    </form>
+  </mat-card>
+</div>

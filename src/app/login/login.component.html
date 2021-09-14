@@ -1,0 +1,42 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Log In</mat-card-title>
+    </mat-card-header>
+
+    <form class="example-form" [formGroup]="loginForm" (ngSubmit)="login()">
+      <mat-card-content>
+        <mat-form-field class="example-full-width" [floatLabel]="'always'">
+          <input matInput placeholder="Username" required formControlName="username" type="text">
+        </mat-form-field>
+        <div *ngIf="username.invalid && (username.dirty || username.touched)" class="error">
+          <p *ngIf="username.errors?.required">
+            Username is required.
+          </p>
+        </div>
+
+        <mat-form-field class="example-full-width" [floatLabel]="'always'">
+          <input matInput placeholder="Password" required formControlName="password" type="password">
+        </mat-form-field>
+        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="error">
+          <p *ngIf="password.errors?.required">
+            Password is required.
+          </p>
+          <p *ngIf="password.errors?.minlength">
+            Password should be minimum 6 characters long 
+        </p>
+        <p *ngIf="password.errors?.maxlength">
+          Password should be maximum 15 characters long 
+        </p>
+        <p *ngIf="password.errors?.pattern">
+          Password should be alphanumeric with one caps letter 
+        </p>
+        </div>
+      </mat-card-content>
+      <button mat-stroked-button color="accent" class="btn-block" type="submit">Log In</button>
+      <div style="margin-top: 10px;">Create an account ?<a routerLink="/signup" style="text-decoration: none;"> Signup</a></div>
+    </form>
+  </mat-card>
+
+</div>

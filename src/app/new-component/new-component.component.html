@@ -1,0 +1,58 @@
+<section class="prSeection">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="javascript:void(0);">User Management</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/user-detail" routerLinkActive="active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" (click)="logout()" href="javascript:void(0);">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</section>
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Edit Detail </mat-card-title>
+    </mat-card-header>
+
+    <form class="example-form" [formGroup]="editForm" (ngSubmit)="editDetail()">
+      <mat-card-content>
+        <mat-form-field class="example-full-width" [floatLabel]="'always'">
+          <input matInput placeholder="Username" formControlName="username" type="text" readonly>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" [floatLabel]="'always'">
+          <input matInput placeholder="Name" formControlName="name" type="text" >
+        </mat-form-field>
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error">
+          <p *ngIf="name.errors?.required">
+            Name is required.
+          </p>
+          <p *ngIf="name.errors?.pattern">
+              Name should be only contain alphabets
+          </p>
+        </div>
+
+          <mat-radio-group aria-label="Select an option" formControlName="role">
+              <mat-radio-button  [checked]=" userList.role == 'admin'" value="admin">Admin</mat-radio-button>
+              <mat-radio-button  [checked]=" userList.role == 'user'" value="user">User</mat-radio-button>
+          </mat-radio-group>
+          <div *ngIf="role.invalid && (role.dirty || role.touched)" class="error">
+              <p *ngIf="role.errors?.required">
+                  Role is required
+              </p>
+          </div>
+      </mat-card-content>
+      <button mat-stroked-button color="accent" class="btn-block" type="submit">Edit</button>
+    </form>
+  </mat-card>
+</div>

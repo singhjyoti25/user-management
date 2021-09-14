@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Edit Detail </mat-card-title>
+      </mat-card-header>
+  
+      <form class="example-form" [formGroup]="editForm" (ngSubmit)="editDetail()">
+        <mat-card-content>
+          <mat-form-field class="example-full-width" [floatLabel]="'always'">
+            <input matInput placeholder="Username" formControlName="username" type="text" readonly>
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width" [floatLabel]="'always'">
+            <input matInput placeholder="Name" formControlName="name" type="text" >
+          </mat-form-field>
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error">
+            <p *ngIf="name.errors?.required">
+              Name is required.
+            </p>
+            <p *ngIf="name.errors?.pattern">
+                Name should be only contain alphabets
+            </p>
+          </div>
+  
+            <mat-radio-group aria-label="Select an option" formControlName="role">
+                <mat-radio-button  [checked]=" userList.role == 'admin'" value="admin">Admin</mat-radio-button>
+                <mat-radio-button  [checked]=" userList.role == 'user'" value="user">User</mat-radio-button>
+            </mat-radio-group>
+            <div *ngIf="role.invalid && (role.dirty || role.touched)" class="error">
+                <p *ngIf="role.errors?.required">
+                    Role is required
+                </p>
+            </div>
+        </mat-card-content>
+        <button mat-stroked-button color="accent" class="btn-block" type="submit">Edit</button>
+      </form>
+    </mat-card>
+  </div>

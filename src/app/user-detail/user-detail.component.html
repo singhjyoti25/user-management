@@ -1,0 +1,42 @@
+<section class="prSeection">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="javascript:void(0);">User Management</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink="/user-detail" routerLinkActive="active">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" (click)="logout()" href="javascript:void(0);">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="login-wrapper1" fxLayout="row" fxLayoutAlign="center center" style="margin-top: 60px;">
+    <table class="table table-bordered border-primary">
+      <thead>
+        <tr class="">
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Username</th>
+          <th scope="col">Role</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody class="">
+        <tr class="">
+          <th scope="row">{{userList.id}}</th>
+          <td class="">{{userList.name | titlecase}}</td>
+          <td class="">{{userList.username}}</td>
+          <td class="">{{userList.role | titlecase}}</td>
+          <td class=""><a class="btn btn-success" routerLink="/edit-detail">Edit</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

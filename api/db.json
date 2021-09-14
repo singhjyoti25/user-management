@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Jyoti",
+      "username": "adminUser",
+      "password": "adminUser@123",
+      "role": "admin"
+    },
+    {
+      "id": 3,
+      "name": "Jyoti Singh",
+      "username": "jyotiKumarii",
+      "password": "Jyoti@123",
+      "role": "admin"
+    },
+    {
+      "id": 1631024443378,
+      "name": "Jyotiii",
+      "username": "jyotiu",
+      "password": "Jyoti@123",
+      "role": "user"
+    },
+    {
+      "id": 1631024566003,
+      "name": "Jyoti",
+      "username": "jyothiKumari",
+      "password": "Jyoti@123",
+      "role": "user"
+    },
+    {
+      "id": 1631427385945,
+      "name": "Qwerty",
+      "username": "qwerty",
+      "password": "Qwerty@123",
+      "role": "user"
+    },
+    {
+      "id": 1631458474191,
+      "name": "Jyoti Singh",
+      "username": "jyotiSingh",
+      "password": "jyotiSingh@123",
+      "role": "user"
+    }
+  ]
+}
