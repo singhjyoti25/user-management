@@ -5,11 +5,11 @@ import { AuthService } from '../auth/auth.service';
 import { environment } from '../../environments/environment';
 
 @Component({
-  selector: 'app-new-component',
-  templateUrl: './new-component.component.html',
-  styleUrls: ['./new-component.component.css']
+  selector: 'app-edit-detail',
+  templateUrl: './edit-detail.component.html',
+  styleUrls: ['./edit-detail.component.css']
 })
-export class NewComponentComponent implements OnInit {
+export class EditDetailComponent implements OnInit {
   editForm: FormGroup;
   userList:any={};
   userName:string;
@@ -50,6 +50,11 @@ export class NewComponentComponent implements OnInit {
       }
     });
   }
+
+  /**
+   * Get User by userId
+   * 
+   */
 
   getUser(){
     const id = this.authService.getCurrentUserId();

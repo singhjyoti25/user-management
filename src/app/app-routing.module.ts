@@ -5,7 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { SignupComponent } from './signup/signup.component';
-import { NewComponentComponent } from './new-component/new-component.component';
+import { EditDetailComponent } from './edit-detail/edit-detail.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 
@@ -15,7 +15,7 @@ const routes: Routes = [
   { path:"user-detail",component:UserDetailComponent, canActivate: [AuthGuard],data: {role: 'user'}},
   { path:"admin-dashboard",component:AdminDashboardComponent, canActivate: [AuthGuard],data: {role: 'admin'}},
   { path:"signup",component:SignupComponent },
-  { path:"edit-detail",component:NewComponentComponent,canActivate: [AuthGuard],data: {role: 'user'} },
+  { path:"edit-detail",component:EditDetailComponent,canActivate: [AuthGuard],data: {role: 'user'} },
   { path:"add-user",component:AddUserComponent, canActivate: [AuthGuard],data: {role: 'admin'}},
   { path:"edit-user/:userId",component:EditUserComponent, canActivate: [AuthGuard],data: {role: 'admin'}}
 ];

@@ -17,7 +17,7 @@ import { SignupComponent } from './signup/signup.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ToastrModule } from 'ngx-toastr';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { NewComponentComponent } from './new-component/new-component.component';
+import { EditDetailComponent } from './edit-detail/edit-detail.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 
@@ -30,7 +30,7 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     UserDetailComponent,
     AdminDashboardComponent,
     SignupComponent,
-    NewComponentComponent,
+    EditDetailComponent,
     AddUserComponent,
     EditUserComponent  
   ],

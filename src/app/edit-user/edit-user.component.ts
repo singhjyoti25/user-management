@@ -58,13 +58,14 @@ export class EditUserComponent implements OnInit {
     });
   }
 
+  /**
+   * Get User by userId
+   * @param userId 
+   */
   getUser(userId){
     this.authService.getUser(userId).subscribe(d=>{
       this.userList = d;
       if(this.userList){
-        // this.userName = this.userList.username;
-        // this.Name = this.userList.name;
-        // this.Role = this.userList.role;
 
         this.editForm.patchValue({
           'name':this.userList.name,
